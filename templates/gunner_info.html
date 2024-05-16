@@ -12,16 +12,16 @@
             <img class="logo" src="https://eldan-arsenal-buk1.s3.amazonaws.com/Arsenal_FC.png" alt="Arsenal Logo">
         </header>
         <div class="main-content">
-            <!-- Your main content here -->
             <h1>Welcome to Arsenal!</h1>
-            <h2>This are our members:</h2>
-            <div class="user-list">
-                {% for user in user_list %}
-                <a href="{{ url_for('Gunner_details', user_id=user.id) }}">
-                    <li>{{user.username}}</li>
-                </a>
+            <h2>{{user.username}} info:</h2>
+            <div class="user-info">
+                <h2>Username</h2>
+                <p>{{user.username}}</p>
+                <h2>Email</h2>
+                <p>{{user.email}}</p>
+                
         
-                {% endfor %}
+                
             </div>
         </div>
     </div>

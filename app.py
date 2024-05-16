@@ -16,6 +16,11 @@ def hello():
     user_list = User.query.all()
     return render_template("index.html", user_list=user_list)
 
+@app.route("/gunner/<int:user_id>")
+def Gunner_details(user_id):
+    user = User.query.get(user_id)
+    return render_template("gunner_info.html", user=user)
+
 @app.route("/add_gunner", methods=["POST", "GET"])
 def AddGunner():
     if request.method == "POST":

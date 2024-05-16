@@ -14,6 +14,9 @@
         <div class="main-content">
             <!-- Your main content here -->
             <h1>Welcome to Arsenal!</h1>
+            <a href="{{ url_for('AddGunner') }}">
+                Not a member? sign up!
+            </a>
             <h2>This are our members:</h2>
             <div class="user-list">
                 {% for user in user_list %}

@@ -11,6 +11,7 @@ form {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    color: white;
 }
 
 /* Styling the header */
@@ -34,7 +35,7 @@ label {
 
 /* Styling the input fields */
 input[type="text"] {
-    width: 250px; /* Adjust the width as needed */
+    width: 950px; /* Adjust the width as needed */
     padding: 10px;
     margin-bottom: 10px; /* Adding space between input fields */
     

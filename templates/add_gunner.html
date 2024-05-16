@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Add Gunner!</title>
+</head>
+<body>
+<form method="post">
+    <div class="background-container">
+            <header>
+                <img class="logo" src="https://eldan-arsenal-buk1.s3.amazonaws.com/Arsenal_FC.png" alt="Arsenal Logo">
+            </header>
+        <label>username</label>
+        <input type="text" name="username" required>
+        <br>
+        <label>email</label>
+        <input type="text" name="email" required>
+        <br>
+        <input type="submit" value="Save">
+    </div>
+</form>
+</body>
+</html>

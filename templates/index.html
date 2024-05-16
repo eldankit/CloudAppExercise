@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title Here</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-container">
+        <header>
+            <img class="logo" src="https://eldan-arsenal-buk1.s3.amazonaws.com/Arsenal_FC.png" alt="Arsenal Logo">
+        </header>
+        <div class="main-content">
+            <!-- Your main content here -->
+            <h1>Welcome to Emirates Stadium</h1>
+            <h2>This are our members:</h2>
+            <div class="user-list">
+                {% for user in user_list %}
+                <li>Name: {{user.username}}, Email {{user.email}}</li>
+        
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

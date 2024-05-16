@@ -1,0 +1,72 @@
+/* Resetting default margin and padding */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Centering the form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Styling the header */
+header {
+    text-align: center;
+}
+
+/* Styling the logo */
+.logo {
+    width: 200px; /* Adjust the width as needed */
+    height: auto;
+    margin-bottom: 20px; /* Adding space between the logo and input fields */
+}
+
+/* Styling the labels */
+label {
+    display: block;
+    margin-bottom: 5px; /* Adding space between labels and inputs */
+    color: white;
+}
+
+/* Styling the input fields */
+input[type="text"] {
+    width: 250px; /* Adjust the width as needed */
+    padding: 10px;
+    margin-bottom: 10px; /* Adding space between input fields */
+    
+}
+
+/* Styling the submit button */
+input[type="submit"] {
+    width: 150px; /* Adjust the width as needed */
+    padding: 10px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Container for the background image */
+.background-container {
+    background-image: url('https://eldan-arsenal-buk1.s3.amazonaws.com/500px-Emirates_Stadium_Arsenal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh; /* Ensure the background covers the entire viewport height */
+}
+
+/* Styling the main content */
+.main-content {
+    padding: 20px;
+    text-align: center;
+    color: white; /* Setting text color to white for better visibility */
+}

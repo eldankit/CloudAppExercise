@@ -13,13 +13,7 @@
         </header>
         <div class="main-content">
             <h1>Welcome to Arsenal!</h1>
-            <h2>{{user.username}} info:</h2>
-            <div class="user-info">
-                <h2>Username</h2>
-                <p>{{user.username}}</p>
-                <h2>Email</h2>
-                <p>{{user.email}}</p>
-            </div>
+            <h2>Hello {{ username }}!</h2>
             <br>
             <a href="{{ url_for('hello') }}">
                 Return home

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 app = Flask(__name__)
@@ -21,6 +21,11 @@ def Gunner_details(user_id):
     user = User.query.get(user_id)
     return render_template("gunner_info.html", user=user)
 
+@app.route("/hello")
+def Gunner_hello():
+    username = request.args.get("username")
+    return render_template("gunner_hello.html", username=username)
+
 @app.route("/add_gunner", methods=["POST", "GET"])
 def AddGunner():
     if request.method == "POST":
@@ -29,7 +34,7 @@ def AddGunner():
         user_obj = User(username=username, email=email)
         db.session.add(user_obj)
         db.session.commit()
-        return redirect("/")
+        return redirect(url_for("Gunner_hello", username=username))
     else:
         return render_template("add_gunner.html")
 

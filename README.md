@@ -16,8 +16,8 @@ The goal of the exercise is to deploy this app via docker container in an AWS EC
 
 ## Deployment instructions - launch template and NLB
 
-1. create an ec2 instance as previously showed
+1. create an ec2 instance as previously showed (EC2 settings):
    ![EC2 settings](images/instance_settings.png)
-2. Use the following sg-rules:
+2. Use the following sg-rules (inbound from anywhere):
    ![SG-rules](images/sg_rules.png)
 3. 

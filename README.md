@@ -10,6 +10,6 @@ The goal of the exercise is to deploy this app via docker container in an AWS EC
    2. for Ubuntu - https://docs.docker.com/engine/install/ubuntu/
 3. Change directory to the repo directory (where the Dockerfile is saved) and in the terminal insert the following commands:
    1. docker build -t myarsenalapp .
-   2. docker run -p 5000:5000 myarsenalapp
+   2. docker run -d -p 5000:5000 myarsenalapp
 4. Using the Public IP for the EC2 or localhost open an internet tab in port 5000
 5. The app is up!

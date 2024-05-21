@@ -58,3 +58,6 @@ docker run -d -p 5000:5000 myarsenalapp
 
 7. create the launch template
 8. go to launch templates section and select the created template, go to Actions --> launch instance from template and make sure that the app is running the same
+9. go to Load Balancers and create a new network load balancer. make sure to select all the subnets and make a listener to port 80 and at the target group section click create target group.
+10. at the target group select tcp protocol and select port 5000, at the healthcheck also make sure to use the tcp protocol and create the target group.
+11. at the load balancer creation page refresh the target group list and select the one that you created.

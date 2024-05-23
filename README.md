@@ -27,7 +27,7 @@ The goal of the exercise is to deploy this app via docker container in an AWS EC
    ![instance template creation](images/launch_template.png)
 5. keep everything as as and scroll down to advanced settings
 6. in the User Data section paste the following:
-
+```
 #!/bin/bash
 
 sudo yum update -y
@@ -55,7 +55,7 @@ newgrp docker
 docker build -t myarsenalapp .
 
 docker run -d -p 5000:5000 myarsenalapp
-
+```
 7. create the launch template
 8. go to launch templates section and select the created template, go to Actions --> launch instance from template and make sure that the app is running the same
 9. go to Load Balancers and create a new network load balancer. make sure to select all the subnets and make a listener to port 80 and at the target group section click create target group.

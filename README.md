@@ -63,18 +63,18 @@ docker run -d -p 5000:5000 myarsenalapp
 ```
 
 7. create the launch template
-8. go to launch templates section and select the created template, go to Actions --> launch instance from template and make sure that the app is running the same
+8. go to launch templates section and select the created template, go to Actions --> launch instance from template and make sure that the app is running as before.
 
    <img width="447" alt="launchtemplate-testtemplate" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/28bf845b-7892-4707-ab92-f78f1f76f016">
 
-10. go to Load Balancers and create a new network load balancer. make sure to select all the subnets and make a listener to port 80 and at the target group section click create target group.
-11. at the target group select tcp protocol and select port 5000, at the healthcheck also make sure to use the tcp protocol and create the target group.
+9. go to Load Balancers and create a new network load balancer. make sure to select all the subnets and make a listener to port 80 and at the target group section click create target group.
+10. at the target group select tcp protocol and select port 5000, at the healthcheck also make sure to use the tcp protocol and create the target group.
    the target group was set as follows:
 
    <img width="1108" alt="tg-settings" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/85222cd3-9978-4497-821d-0567cb9f94b6">
 
-12. at the load balancer creation page refresh the target group list and select the one that you created.
-13. the rest of the NLB settings are as follows:
+11. at the load balancer creation page select the one that you created and create the NLB.
+12. Create an Auto Scaling Group with the following settings:
 <img width="909" alt="asg-settings1" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/15eae62c-bba4-4ee4-bee8-d4bfa7e1a2a7">
 <img width="909" alt="asg-settings2" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/fef98470-cba8-4a45-86d3-18f917fafdcd">   
 <img width="909" alt="asg-settings3" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/37718a1e-afe7-440d-8447-9d7a1e9bd374">
@@ -83,4 +83,35 @@ docker run -d -p 5000:5000 myarsenalapp
 <img width="919" alt="asg-settings6" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/214141f2-2042-4c5b-b606-3f6a8cdf91e7">
 
 
-14. 
+13. to see that the ASG+NLB works go to the Target group and see that it's healthy:
+
+   <img width="1201" alt="tg-healthy" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/48e635a1-ca7a-4dd4-b15e-53671d45afd0">
+
+14. afterwards, go to the NLB and find the NLB DNS:
+
+   <img width="604" alt="LB-DNS" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/c8a5bdd5-021d-4910-bc46-33ed2a069c03">
+
+14. open a new web browser tab with the DNS and see that the webapp works:
+
+   <img width="1103" alt="LB_app_running" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/9108ca21-43cb-485e-8a95-d0ca1d0947a6">
+
+15. to check that the ASG works, at first terminate the instance and see that it was recreated, then connect to the instance that is up and use the stress command:
+
+   <img width="1346" alt="stress_test" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/cfcd1003-c212-4240-91af-ac9e9fff07f6">
+
+16. afterwards wait and see that another instance is set up:
+
+   <img width="1170" alt="LB_testing" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/9cfcf7f8-30ae-4f44-b665-a38f7f6e88d2">
+
+17. the set up is complete!
+    
+##    EC2 with a private s3 bucket
+
+in order to use an EC2 instance with a private s3 bucket we first need to set up an IAM role with the following permisiions:
+
+   <img width="1170" alt="IAM-role-s3" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/4090c118-3e85-407f-bd84-fdf556949403">
+
+then assign the role to the EC2 instance (or launch template) so that the bucket is accessible when the app is running.
+
+
+That's it!

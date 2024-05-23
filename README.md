@@ -12,7 +12,7 @@ The goal of the exercise is to deploy this app via docker container in an AWS EC
    1. docker build -t myarsenalapp .
    2. docker run -d -p 5000:5000 myarsenalapp
 4. Using the Public IP for the EC2 or localhost open an internet tab in port 5000:
-   ![ec2 running](images/EC2_running.png)
+  <img width="1209" alt="EC2_running" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/14c11294-67e3-4917-b037-3e34cde7ccf8">
 6. The app is up!
    ![app running](images/App_running.png)
 

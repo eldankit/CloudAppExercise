@@ -27,6 +27,7 @@ The goal of the exercise is to deploy this app via docker container in an AWS EC
 3. after making sure the app works properly (as done previuosly)
 4. select the running app --> actions --> Images and templates --> Create template from instance
    <img width="1252" alt="launch_template" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/9aeb1936-d234-48a9-a7e1-3129e950b8f6">
+
 5. keep everything as as and scroll down to advanced settings
 6. in the User Data section paste the following:
    <img width="1194" alt="user_data_bash" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/978b8c05-082d-4a58-8fa3-b9f3963e06cb">
@@ -65,6 +66,21 @@ docker run -d -p 5000:5000 myarsenalapp
 8. go to launch templates section and select the created template, go to Actions --> launch instance from template and make sure that the app is running the same
 
    <img width="447" alt="launchtemplate-testtemplate" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/28bf845b-7892-4707-ab92-f78f1f76f016">
+
 10. go to Load Balancers and create a new network load balancer. make sure to select all the subnets and make a listener to port 80 and at the target group section click create target group.
 11. at the target group select tcp protocol and select port 5000, at the healthcheck also make sure to use the tcp protocol and create the target group.
+   the target group was set as follows:
+
+   <img width="1108" alt="tg-settings" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/85222cd3-9978-4497-821d-0567cb9f94b6">
+
 12. at the load balancer creation page refresh the target group list and select the one that you created.
+13. the rest of the NLB settings are as follows:
+<img width="909" alt="asg-settings1" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/15eae62c-bba4-4ee4-bee8-d4bfa7e1a2a7">
+<img width="909" alt="asg-settings2" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/fef98470-cba8-4a45-86d3-18f917fafdcd">   
+<img width="909" alt="asg-settings3" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/37718a1e-afe7-440d-8447-9d7a1e9bd374">
+<img width="919" alt="asg-settings4" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/a8ab0919-9684-442b-9f3c-a0ad4caeba7a">
+<img width="919" alt="asg-settings5" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/dcff3c82-4589-4a98-90be-e82f5fcc0f41">
+<img width="919" alt="asg-settings6" src="https://github.com/eldankit/CloudAppExercise/assets/136235146/214141f2-2042-4c5b-b606-3f6a8cdf91e7">
+
+
+14. 

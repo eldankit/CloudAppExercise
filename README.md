@@ -4,6 +4,9 @@ This git repo has an example flask app for user db (for Arsenal FC fans) along w
 The goal of the exercise is to deploy this app via docker container in an AWS EC2 instance and later on use a load balancer and auto scaling group for traffic managment. the Arsenal logo image is also used via an s3 storage object (public)
 (at the end of the README there will be notes for making an EC2 instance work with a private bucket using boto3 and an IAM role)
 
+NOTE:
+the database in the app is local for the instance (since its just an example app), so when multiple instances are up the data presented may not be the same or up to date.
+
 ## Deployment instruction - For single EC2 instance
 1. Clone the repository to the local/virtual machine with git clone (install it if missing)
 2. In case you don't have docker installed, use the following manual to install Docker:
